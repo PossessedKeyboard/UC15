@@ -1,0 +1,45 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 de out. de 2026, 17:22:36
+    Author     : DELL
+*/
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f5f7; color: #222; }
+header { background: #1f2937; color: #fff; padding: 12px 24px; }
+header h1 { margin: 0 0 8px; font-size: 1.3rem; }
+nav a { color: #cbd5e1; margin-right: 16px; text-decoration: none; }
+nav a:hover { color: #fff; text-decoration: underline; }
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+h2 { margin-top: 0; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: 8px 10px; border: 1px solid #d1d5db; text-align: left; vertical-align: top; }
+th { background: #e5e7eb; }
+form label { display: block; margin: 12px 0 4px; font-weight: bold; }
+form input, form select, form textarea { width: 100%; padding: 8px; border: 1px solid #9ca3af; border-radius: 4px; font: inherit; }
+form.inline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; }
+form.inline label { margin: 0; }
+form.inline input { width: 120px; }
+button, .botao { display: inline-block; padding: 8px 14px; border: 0; border-radius: 4px; background: #2563eb; color: #fff; cursor: pointer; font: inherit; text-decoration: none; }
+button:hover, .botao:hover { background: #1d4ed8; }
+.secundario { background: #6b7280; }
+.secundario:hover { background: #4b5563; }
+.perigo { background: #dc2626; }
+.perigo:hover { background: #b91c1c; }
+.botoes { margin-top: 16px; display: flex; gap: 8px; }
+td .botao, td button { padding: 4px 10px; font-size: 0.9rem; margin-right: 4px; }
+.msg { padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; }
+.msg.ok { background: #dcfce7; color: #166534; }
+.msg.erro { background: #fee2e2; color: #991b1b; }
+.cards { list-style: none; padding: 0; display: grid; gap: 12px; }
+.cards a { display: block; padding: 16px; background: #fff; border: 1px solid #d1d5db; border-radius: 6px; color: #1f2937; text-decoration: none; }
+.cards a:hover { border-color: #2563eb; }
+
+/* ---- Acréscimos para as telas em Thymeleaf ---- */
+nav { display: flex; align-items: center; gap: 4px; }
+nav .nav-form { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+form.inline-form { display: inline; }
+.campo-erro { display: block; margin-top: 4px; color: #991b1b; }
+main.login { max-width: 380px; margin-top: 80px; padding: 24px; background: #fff; border: 1px solid #d1d5db; border-radius: 6px; }

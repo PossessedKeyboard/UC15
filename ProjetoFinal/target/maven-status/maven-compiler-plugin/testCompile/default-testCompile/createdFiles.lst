@@ -1,0 +1,6 @@
+com\uc15\ProjetoFinal\livro\FakeBookService.class
+com\uc15\ProjetoFinal\service\LoginServiceTests.class
+com\uc15\ProjetoFinal\livro\BookEdicaoMockitoTests.class
+com\uc15\ProjetoFinal\livro\BookListagemMockitoTests.class
+com\uc15\ProjetoFinal\ProjetoFinalApplicationTests.class
+com\uc15\ProjetoFinal\livro\BookExclusaoMockitoTests.class

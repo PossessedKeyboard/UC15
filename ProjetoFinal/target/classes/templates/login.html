@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<main class="login">
+    <h2>Login</h2>
+
+    <div class="msg erro" th:if="${erro}" th:text="${erro}">Usuário ou senha inválidos.</div>
+
+    <form th:action="@{/loginForm}" th:object="${loginForm}" method="post">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" th:field="*{usuario}" autofocus="autofocus" />
+        <small class="campo-erro" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}">erro</small>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" th:field="*{senha}" />
+        <small class="campo-erro" th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}">erro</small>
+
+        <div class="botoes">
+            <button type="submit">Entrar</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

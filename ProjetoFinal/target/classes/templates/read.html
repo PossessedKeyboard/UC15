@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livros cadastrados</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header th:replace="~{fragments :: cabecalho}"></header>
+<main>
+    <h2>Livros cadastrados</h2>
+
+    <div class="msg ok" th:if="${sucesso}" th:text="${sucesso}">Operação realizada.</div>
+    <div class="msg erro" th:if="${erro}" th:text="${erro}">Erro.</div>
+
+    <form class="inline" th:action="@{/listarLivros}" method="get">
+        <label for="busca-id">Pesquisar por ID</label>
+        <input type="number" id="busca-id" name="id" min="1" th:value="${buscaId}" required="required" />
+        <button type="submit">Pesquisar</button>
+        <a class="botao secundario" th:href="@{/listarLivros}">Mostrar todos</a>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ano de Lançamento</th>
+            <th>Editora</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="livro : ${livros}">
+            <td th:text="${livro.id}">1</td>
+            <td th:text="${livro.titulo}">Título</td>
+            <td th:text="${livro.autor}">Autor</td>
+            <td th:text="${livro.ano}">2000</td>
+            <td th:text="${livro.editora}">Editora</td>
+            <td>
+                <a class="botao" th:href="@{/editarLivro/{id}(id=${livro.id})}">Editar</a>
+                <form class="inline-form" method="post"
+                      th:action="@{/deletar/{id}(id=${livro.id})}"
+                      th:attr="data-confirm=|Apagar o livro ${livro.id}?|">
+                    <button type="submit" class="perigo">Apagar</button>
+                </form>
+            </td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(livros)}">
+            <td colspan="6">Nenhum livro encontrado.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="botoes">
+        <a class="botao" th:href="@{/cadastrarLivro}">Cadastrar novo livro</a>
+    </div>
+</main>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

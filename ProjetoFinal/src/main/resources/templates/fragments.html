@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Cabeçalho reutilizado em todas as telas após o login -->
+<header th:fragment="cabecalho">
+    <h1>Biblioteca</h1>
+    <nav>
+        <a th:href="@{/menu}">Menu</a>
+        <a th:href="@{/listarLivros}">Livros</a>
+        <a th:href="@{/cadastrarLivro}">Cadastrar</a>
+        <form th:action="@{/logoff}" method="post" class="nav-form">
+            <span th:text="${session.usuario}">usuario</span>
+            <button type="submit" class="secundario">Sair</button>
+        </form>
+    </nav>
+</header>
+
+<!-- Campos do livro, reutilizados por create.html e update.html (dentro de um form com th:object="${livro}") -->
+<div th:fragment="camposLivro">
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" th:field="*{titulo}" maxlength="255" />
+    <small class="campo-erro" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}">erro</small>
+
+    <label for="autor">Autor</label>
+    <input type="text" id="autor" th:field="*{autor}" maxlength="255" />
+    <small class="campo-erro" th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}">erro</small>
+
+    <label for="ano">Ano de lançamento</label>
+    <input type="number" id="ano" th:field="*{ano}" min="1" max="9999" />
+    <small class="campo-erro" th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}">erro</small>
+
+    <label for="editora">Editora</label>
+    <input type="text" id="editora" th:field="*{editora}" maxlength="255" />
+    <small class="campo-erro" th:if="${#fields.hasErrors('editora')}" th:errors="*{editora}">erro</small>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar livro</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header th:replace="~{fragments :: cabecalho}"></header>
+<main>
+    <h2>Editar livro <span th:text="${livro.id}">1</span></h2>
+
+    <form th:action="@{/updateForm/{id}(id=${livro.id})}" th:object="${livro}" method="post">
+        <div th:replace="~{fragments :: camposLivro}"></div>
+
+        <div class="botoes">
+            <button type="submit">Atualizar</button>
+            <a class="botao secundario" th:href="@{/listarLivros}">Cancelar</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

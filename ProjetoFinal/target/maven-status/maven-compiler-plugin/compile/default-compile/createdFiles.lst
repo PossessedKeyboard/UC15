@@ -1,0 +1,14 @@
+com\uc15\ProjetoFinal\config\WebConfig.class
+com\uc15\ProjetoFinal\controller\BookController.class
+com\uc15\ProjetoFinal\config\LoginInterceptor.class
+com\uc15\ProjetoFinal\service\AuthenticationService.class
+com\uc15\ProjetoFinal\service\BookQueryService.class
+com\uc15\ProjetoFinal\data\BookEntity.class
+com\uc15\ProjetoFinal\data\LoginEntity.class
+com\uc15\ProjetoFinal\ProjetoFinalApplication.class
+com\uc15\ProjetoFinal\service\LoginService.class
+com\uc15\ProjetoFinal\service\BookCommandService.class
+com\uc15\ProjetoFinal\service\BookService.class
+com\uc15\ProjetoFinal\controller\LoginController.class
+com\uc15\ProjetoFinal\data\BookRepository.class
+com\uc15\ProjetoFinal\controller\MenuController.class
